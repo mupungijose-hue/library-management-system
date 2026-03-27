@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Library Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>📚 Library Management System - Dashboard</header>
+
+  <nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/books">Books</a>
+    <a href="/members">Members</a>
+    <a href="/transactions">Transactions</a>
+    <a href="/logout">Logout</a>
+  </nav>
+
+  <div class="container">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>Total Books</h3>
+        <p>{{ total_books }}</p>
+      </div>
+      <div class="card">
+        <h3>Issued Books</h3>
+        <p>{{ issued_books }}</p>
+      </div>
+      <div class="card">
+        <h3>Available Books</h3>
+        <p>{{ available_books }}</p>
+      </div>
+      <div class="card">
+        <h3>Total Members</h3>
+        <p>{{ total_members }}</p>
+      </div>
+      <div class="card">
+        <h3>Total Transactions</h3>
+        <p>{{ total_transactions }}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Welcome Admin 👋</h2>
+      <p>This is your professional Library Management System dashboard.</p>
+      <br>
+      <p>Use the navigation menu to manage books, members, and transactions.</p>
+    </section>
+
+  </div>
+
+  <footer>© 2026 Library Management System | Flask + SQLite</footer>
+
+</body>
+</html>
