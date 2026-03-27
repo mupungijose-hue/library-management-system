@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transactions - Library Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>🔄 Manage Transactions</header>
+
+  <nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/books">Books</a>
+    <a href="/members">Members</a>
+    <a href="/transactions">Transactions</a>
+    <a href="/logout">Logout</a>
+  </nav>
+
+  <div class="container">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <section class="section">
+      <h2>Issue Book</h2>
+      <form action="/issue_book" method="POST">
+        <input type="text" name="book_id" placeholder="Book ID" required>
+        <input type="text" name="member_id" placeholder="Member ID" required>
+        <button type="submit">Issue Book</button>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>Return Book</h2>
+      <form action="/return_book" method="POST">
+        <input type="text" name="book_id" placeholder="Book ID" required>
+        <input type="text" name="member_id" placeholder="Member ID" required>
+        <button type="submit">Return Book</button>
+      </form>
+    </section>
+
+    <section class="section">
+      <h2>Transaction History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Book ID</th>
+            <th>Member ID</th>
+            <th>Action</th>
+            <th>Issue Date</th>
+            <th>Due Date</th>
+            <th>Return Date</th>
+            <th>Fine (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for txn in transactions %}
+          <tr>
+            <td>{{ txn.id }}</td>
+            <td>{{ txn.book_id }}</td>
+            <td>{{ txn.member_id }}</td>
+            <td>{{ txn.action }}</td>
+            <td>{{ txn.issue_date if txn.issue_date else '-' }}</td>
+            <td>{{ txn.due_date if txn.due_date else '-' }}</td>
+            <td>{{ txn.return_date if txn.return_date else '-' }}</td>
+            <td>{{ txn.fine }}</td>
+          </tr>
+          {% endfor %}
+          {% if not transactions %}
+          <tr>
+            <td colspan="8">No transactions found.</td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <footer>© 2026 Library Management System | Transactions Module</footer>
+
+</body>
+</html>

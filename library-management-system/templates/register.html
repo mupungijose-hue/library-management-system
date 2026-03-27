@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Library Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-box">
+  <h2>📝 Register</h2>
+
+  <!-- ✅ FLASH MESSAGES -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <!-- ✅ REGISTER FORM -->
+  <form method="POST" action="{{ url_for('register') }}">
+
+    <input type="text" name="member_id" placeholder="Member ID" required>
+
+    <!-- Added autocomplete fix -->
+    <input type="text" name="name" placeholder="Username" autocomplete="off" required>
+
+    <input type="email" name="email" placeholder="Email" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <!-- Prevent browser autofill issues -->
+    <input type="password" name="password" placeholder="Password" autocomplete="new-password" required>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <br>
+
+  <!-- ✅ BACK TO LOGIN -->
+  <a href="{{ url_for('login') }}">⬅ Back to Login</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #333;
+}
+
+header {
+  background: #1e3a8a;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav {
+  background: #2563eb;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 25px auto;
+}
+
+.section {
+  background: white;
+  padding: 22px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  color: #1e3a8a;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 30px;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+input, select, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 15px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+table th, table td {
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  background: #1e3a8a;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.status-available {
+  color: green;
+  font-weight: bold;
+}
+
+.status-issued {
+  color: red;
+  font-weight: bold;
+}
+
+.delete-btn {
+  text-decoration: none;
+  background: #dc2626;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+.flash {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.flash.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.flash.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  margin: 70px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.small-text {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 10px;
+  text-align: center;
+}
+
+footer {
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  margin-top: 30px;
+}
+
+.search-form {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }  
+}
+/* ---------- USER BILLING PAGE ---------- */
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-weight: 500;
+}
+
+/* GLASS CARD */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    color: white;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th {
+    text-align: left;
+    padding: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* HOVER EFFECT */
+table tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* STATUS BADGES */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.available {
+    background: #2ecc71;
+}
+
+.out {
+    background: #e74c3c;
+}
+
+/* SUMMARY CARDS */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+.summary-box h2 {
+    font-size: 24px;
+}
+
+/* BUTTON */
+button {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* LOGOUT */
+.logout {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* SCROLL */
+.table-wrapper {
+    overflow-x: auto;
+}
+/* TABLE TEXT FIX */
+table {
+    color: #222;  /* Dark text */
+}
+
+/* Keep headings white */
+table th {
+    color: #ffffff;
+}
+
+/* Make rows slightly solid for readability */
+table tr {
+    background: rgba(255, 255, 255, 0.85);
+    color: #222;
+}
+
+/* Alternate row shading */
+table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+/* Hover effect */
+table tr:hover {
+    background: rgba(255, 255, 255, 1);
+}
