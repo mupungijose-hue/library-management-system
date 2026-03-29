@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Requests</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="requests-page">
+
+<h2>Pending Book Requests</h2>
+
+<table class="requests-table">
+    <tr>
+        <th>User</th>
+        <th>Book ID</th>
+        <th>Action</th>
+    </tr>
+
+    {% for r in requests %}
+    <tr>
+        <td>{{ r.member_id }}</td>
+        <td>{{ r.book_id }}</td>
+        <td>
+            <a href="/approve/{{ r.id }}">Approve</a> |
+            <a href="/reject/{{ r.id }}">Reject</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
